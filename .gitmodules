@@ -1,0 +1,3 @@
+[submodule "utils/license-list-XML"]
+	path = utils/license-list-XML
+	url = https://github.com/spdx/license-list-XML.git
