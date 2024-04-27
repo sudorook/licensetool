@@ -1,0 +1,281 @@
+#!/bin/bash
+
+# SPDX-FileCopyrightText: 2024 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the Free
+# Software Foundation, either version 3 of the License, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+# for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program. If not, see <https://www.gnu.org/licenses/>.
+
+set -euo pipefail
+
+ROOT="$(dirname "${0}")"
+
+source "${ROOT}"/globals
+
+! check_command find fzf git reuse sed && exit 3
+
+function run_annotate {
+  local idx
+  local year
+  local year_end
+  reuse annotate \
+    ${MULTILINE:+--multi-line} \
+    ${LICENSES[*]/#/ --license=} \
+    --merge-copyrights \
+    ${COPYRIGHT_STYLE:+--copyright-style="${COPYRIGHT_STYLE}"} \
+    --template=header \
+    "${IN}"
+  for idx in "${!AUTHORS[@]}"; do
+    if [ "${#YEARS[@]}" -eq 1 ]; then
+      year="${YEARS[*]}"
+    else
+      year="${YEARS["${idx}"]}"
+    fi
+    if [[ -v YEARS_END ]]; then
+      if [ "${#YEARS_END[@]}" -eq 1 ]; then
+        year_end="${YEARS_END[*]}"
+      else
+        year_end="${YEARS_END["${idx}"]}"
+      fi
+    fi
+    reuse annotate \
+      ${MULTILINE:+--multi-line} \
+      --copyright="${AUTHORS["${idx}"]}${EMAILS["${idx}"]:+ <${EMAILS["${idx}"]}>}" \
+      ${year:+--year "${year}" }${year_end:+--year "${year_end}" } \
+      --merge-copyrights \
+      ${COPYRIGHT_STYLE:+--copyright-style="${COPYRIGHT_STYLE}"} \
+      --template=header \
+      "${IN}"
+  done
+}
+
+function run_init {
+  reuse init
+}
+
+function run_download {
+  reuse download --all
+}
+
+function parse_author {
+  IFS=',' read -r -a AUTHORS <<< "${1}"
+}
+
+function parse_email {
+  IFS=',' read -r -a EMAILS <<< "${1}"
+}
+
+function guess_author {
+  mapfile -t AUTHORS < \
+    <(git -C "${BASE}" shortlog -sn "${FILE}" |
+      cut -f2 |
+      fzf --layout=reverse --multi --header-first --select-1)
+}
+
+function guess_email {
+  local email
+  local author
+  for author in "${AUTHORS[@]}"; do
+    email="$(git -C "${BASE}" shortlog -sne --author="${author}" "${FILE}" |
+             cut -f2 |
+             sed -n "s/^${author} <\(.*\)>/\1/p" |
+             head -n 1)"
+    EMAILS+=("${email}")
+  done
+}
+
+function guess_year {
+  local author
+  local tmp
+  local log
+  for author in "${AUTHORS[@]}"; do
+    log="$(git -C "${BASE}" log --author="^${author}" --follow --format=%as "${FILE}")"
+    tmp="$(echo "${log}" | tail -1 | cut -d"-" -f1)"
+    YEARS+=("${tmp:-}")
+    tmp="$(echo "${log}" | head -1 | cut -d"-" -f1)"
+    YEARS_END+=("${tmp:-}")
+  done
+}
+
+function parse_license {
+  local selections
+  local license
+  local spdx_licenses
+  local spdx_license
+  mapfile -t spdx_licenses < <(reuse supported-licenses | cut -f1 | tr -d ' ')
+  IFS=',' read -r -a selections <<< "${1}"
+  for license in "${selections[@]}"; do
+    for spdx_license in "${spdx_licenses[@]}"; do
+      if [[ "${spdx_license}" = "${license}" ]]; then
+        LICENSES+=("${license}")
+        break
+      fi
+    done
+  done
+  if ! [[ -v LICENSES ]] || [ "${#LICENSES[@]}" -eq 0 ]; then
+    return 1
+  fi
+}
+
+function guess_license {
+  if [ -d "${BASE}"/LICENSES ]; then
+    mapfile -t LICENSES < <(find "${BASE}"/LICENSES/ -type f |
+                            sed -e "s,${BASE}/LICENSES/,,g" -e 's,\.txt,,g' |
+                            fzf --layout=reverse --header-first --multi --select-1)
+  fi
+  if ! [[ -v LICENSES ]] || [ "${#LICENSES[@]}" -eq 0 ]; then
+    return 1
+  fi
+}
+
+function select_license {
+  mapfile -t LICENSES < <(reuse supported-licenses |
+                          cut -f1 |
+                          tr -d ' ' |
+                          fzf --layout=reverse --header-first --multi)
+  if ! [[ -v LICENSES ]] || [ "${#LICENSES[@]}" -eq 0 ]; then
+    return 1
+  fi
+}
+
+function print_usage {
+  show_header "Usage: ./licensetool <annotate|download|init> <flags> <file>"
+  show_listitem "\
+  -a|--author   <string>  author (optional)
+  -e|--email    <string>  email address (optional)
+  -g|--git      <bool>    fill optional fields using Git metadata
+  -h|--help               print (this) help message
+  -l|--license  <string>  license header to embed (required)
+  -y|--year     <int>     year for copyright notice (optional)
+  -s|--style    <string>  'reuse' copyright style (default: spdx)
+  -m|--multiline  <bool>  force multiline comments for header (default: false)"
+}
+
+OPTIONS=a:e:ghl:y:s:m
+LONGOPTIONS=author:,email:,git,help,license:,year:,style:multiline
+PARSED=$(getopt -o "${OPTIONS}" --long "${LONGOPTIONS}" -n "${0}" -- "${@}")
+eval set -- "${PARSED}"
+
+while [ ${#} -ge 1 ]; do
+  case "${1}" in
+    -a | --author)
+      parse_author "${2}"
+      shift 2
+      ;;
+    -e | --email)
+      parse_email "${2}"
+      shift 2
+      ;;
+    -l | --license)
+      parse_license "${2}"
+      shift 2
+      ;;
+    -g | --use_git)
+      USE_GIT=true
+      shift
+      ;;
+    -h | --help)
+      print_usage
+      exit
+      ;;
+    -y | --year)
+      YEARS=("${2}")
+      shift 2
+      ;;
+    -s | --style)
+      COPYRIGHT_STYLE="${2}"
+      shift 2
+      ;;
+    -m | --multiline)
+      MULTILINE=true
+      shift
+      ;;
+    --)
+      shift
+      break
+      ;;
+    *)
+      show_error "ERROR: invalid flag ${1@Q}."
+      print_usage
+      exit 3
+      ;;
+  esac
+done
+
+if [[ -v 1 ]]; then
+  MODE="${1}"
+else
+  show_error "ERROR: no mode selected."
+  print_usage
+  exit 3
+fi
+
+USE_GIT="${USE_GIT:-false}"
+COPYRIGHT_STYLE="${COPYRIGHT_STYLE:-"spdx"}"
+
+case "${MODE}" in
+  annotate | embed)
+    if [ -f "${2:-}" ]; then
+      IN="${2}"
+    else
+      show_error "ERROR: input ${2:+"${2@Q}" }not found. Exiting."
+      exit 3
+    fi
+
+    if "${USE_GIT}"; then
+      if git -C "$(dirname "${IN}")" rev-parse; then
+        BASE="$(git -C "$(dirname "${IN}")" rev-parse --show-toplevel)"
+      else
+        show_error "ERROR: ${IN@Q} not in a Git repository. Exiting."
+        exit 3
+      fi
+    else
+      BASE="$(dirname "$(readlink -f "${IN}")")"
+    fi
+
+    FILE="$(realpath --relative-to="${BASE}" "${IN}")"
+
+    if ! [[ -v AUTHORS ]] && "${USE_GIT}"; then
+      guess_author
+    fi
+
+    if ! [[ -v EMAILS ]] && "${USE_GIT}"; then
+      guess_email
+    fi
+
+    if ! [[ -v YEARS ]]; then
+      if "${USE_GIT}"; then
+        guess_year
+      else
+        YEARS=("$(date "+%Y")")
+      fi
+    fi
+
+    if ! [[ -v LICENSES ]] || [ "${#LICENSES[@]}" -eq 0 ]; then
+      guess_license || select_license || exit 3
+    fi
+
+    run_annotate
+    ;;
+  init | install)
+    run_init
+    ;;
+  download)
+    run_download
+    ;;
+  *)
+    show_error "ERROR: ${MODE@Q} not supported. Exiting."
+    exit 3
+    ;;
+esac
