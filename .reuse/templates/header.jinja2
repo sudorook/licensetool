@@ -1,0 +1,1125 @@
+{% for copyright_line in copyright_lines %}
+{{ copyright_line }}
+{% endfor %}
+{% if copyright_lines and spdx_expressions %}
+
+{% endif %}
+{% for expression in spdx_expressions %}
+SPDX-License-Identifier: {{ expression }}
+{% endfor %}
+{% if "AFL-1.1" in spdx_expressions %}
+
+Licensed under the Academic Free License version 1.1.
+{% elif "AFL-1.2" in spdx_expressions %}
+
+Licensed under the Academic Free License version 1.2
+{% elif "AFL-2.0" in spdx_expressions %}
+
+Licensed under the Academic Free License version 2.0
+{% elif "AFL-2.1" in spdx_expressions %}
+
+Licensed under the Academic Free License version 2.1
+{% elif "AFL-3.0" in spdx_expressions %}
+
+Licensed under the Academic Free License version 3.0
+{% elif "AGPL-3.0-only" in spdx_expressions %}
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, version 3.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public
+License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+{% elif "AGPL-3.0-or-later" in spdx_expressions %}
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public
+License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+{% elif "AGPL-3.0" in spdx_expressions %}
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, version 3. This program is distributed in
+the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE. See the GNU Affero General Public License for more details. You
+should have received a copy of the GNU Affero General Public License along
+with this program. If not, see <https://www.gnu.org/licenses/>.
+{% elif "Apache-2.0" in spdx_expressions %}
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may
+not use this file except in compliance with the License. You may obtain a
+copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations
+under the License.
+{% elif "APSL-2.0" in spdx_expressions %}
+
+Portions Copyright (c) 1999-2007 Apple Inc. All Rights Reserved.
+
+This file contains Original Code and/or Modifications of Original Code as
+defined in and that are subject to the Apple Public Source License Version
+2.0 (the 'License'). You may not use this file except in compliance with
+the License. Please obtain a copy of the License at
+http://www.opensource.apple.com/apsl/ and read it before using this file.
+
+The Original Code and all software distributed under the License are
+distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT. Please see
+the License for the specific language governing rights and limitations
+under the License.
+{% elif "BitTorrent-1.0" in spdx_expressions %}
+
+The contents of this file are subject to the BitTorrent Open Source
+License Version 1.0 (the License). You may not copy or use this file, in
+either source code or executable form, except in compliance with the
+License. You may obtain a copy of the License at
+http://www.bittorrent.com/license/.
+
+Software distributed under the License is distributed on an AS IS basis,
+WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+for the specific language governing rights and limitations under the
+License.
+{% elif "BitTorrent-1.1" in spdx_expressions %}
+
+The contents of this file are subject to the BitTorrent Open Source
+License Version 1.1 (the License). You may not copy or use this file, in
+either source code or executable form, except in compliance with the
+License. You may obtain a copy of the License at
+http://www.bittorrent.com/license/.
+
+Software distributed under the License is distributed on an AS IS basis,
+WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+for the specific language governing rights and limitations under the
+License.
+{% elif "BUSL-1.1" in spdx_expressions %}
+
+Use of this software is govered by the Business Source License included in
+the LICENSE.TXT file and at www.mariadb.com/bsl11.
+
+Change Date:
+
+On the date above, in accordance with the Business Source License, use of
+this software will be governed by the open source license specified in the
+LICENSE.TXT file.
+{% elif "CPAL-1.0" in spdx_expressions %}
+
+The contents of this file are subject to the Common Public Attribution
+License Version 1.0 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+_____________. The License is based on the Mozilla Public License Version
+1.1 but Sections 14 and 15 have been added to cover use of software over a
+computer network and provide for limited attribution for the Original
+Developer. In addition, Exhibit A has been modified to be consistent with
+Exhibit B. Software distributed under the License is distributed on an "AS
+IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
+the License for the specific language governing rights and limitations
+under the License. The Original Code is______________________. The
+Original Developer is not the Initial Developer and is __________. If left
+blank, the Original Developer is the Initial Developer. The Initial
+Developer of the Original Code is ____________. All portions of the code
+written by ___________ are Copyright (c) _____. All Rights Reserved.
+Contributor ______________________. Alternatively, the contents of this
+file may be used under the terms of the _____ license (the [___] License),
+in which case the provisions of [______] License are applicable instead of
+those above. If you wish to allow use of your version of this file only
+under the terms of the [____] License and not to allow others to use your
+version of this file under the CPAL, indicate your decision by deleting
+the provisions above and replace them with the notice and other provisions
+required by the [___] License. If you do not delete the provisions above,
+a recipient may use your version of this file under either the CPAL or the
+[___] License.
+{% elif "CUA-OPL-1.0" in spdx_expressions %}
+
+The contents of this file are subject to the CUA Office Public License
+Version 1.0 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+http://cuaoffice.sourceforge.net/
+
+Software distributed under the License is distributed on an "AS IS" basis,
+WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+for the specific language governing rights and limitations under the
+License.
+
+The Original Code is ______________________________________.
+
+The Initial Developer of the Original Code is ________________________.
+Portions created by ______________________ are Copyright (C) ______
+_______________________. All Rights Reserved.
+
+Contributor(s): ______________________________________.
+
+Alternatively, the contents of this file may be used under the terms of
+the _____ license (the "[___] License"), in which case the provisions of
+[______] License are applicable instead of those above. If you wish to
+allow use of your version of this file only under the terms of the [____]
+License and not to allow others to use your version of this file under the
+CUAPL, indicate your decision by deleting the provisions above and replace
+them with the notice and other provisions required by the [___] License.
+If you do not delete the provisions above, a recipient may use your
+version of this file under either the CUAPL or the [___] License.
+{% elif "ECL-1.0" in spdx_expressions %}
+
+Licensed under the Educational Community License version 1.0
+{% elif "ECL-2.0" in spdx_expressions %}
+
+Licensed under the Educational Community License, Version 2.0 (the
+"License"); you may not use this file except in compliance with the
+License. You may obtain a copy of the License at
+
+http://www.osedu.org/licenses/ECL-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations
+under the License.
+{% elif "GFDL-1.1-invariants-only" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1; with
+the Invariant Sections being LIST THEIR TITLES, with the Front-Cover Texts
+being LIST, and with the Back-Cover Texts being LIST. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.1-invariants-or-later" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1 or any
+later version published by the Free Software Foundation; with the
+Invariant Sections being LIST THEIR TITLES, with the Front-Cover Texts
+being LIST, and with the Back-Cover Texts being LIST. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.1-no-invariants-only" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1; with
+no Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts. A copy of the license is included in the section entitled "GNU Free
+Documentation License".
+{% elif "GFDL-1.1-no-invariants-or-later" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1 or any
+later version published by the Free Software Foundation; with no Invariant
+Sections, with no Front-Cover Texts, and with no Back-Cover Texts. A copy
+of the license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.1-only" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1; with
+the Invariant Sections being LIST THEIR TITLES, with the Front-Cover Texts
+being LIST, and with the Back-Cover Texts being LIST. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.1-or-later" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1 or any
+later version published by the Free Software Foundation; with the
+Invariant Sections being LIST THEIR TITLES, with the Front-Cover Texts
+being LIST, and with the Back-Cover Texts being LIST. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.1" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1 or any
+later version published by the Free Software Foundation; with the
+Invariant Sections being LIST THEIR TITLES, with the Front-Cover Texts
+being LIST, and with the Back-Cover Texts being LIST. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.2-invariants-only" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2; with
+the Invariant Sections being LIST THEIR TITLES, with the Front-Cover Texts
+being LIST, and with the Back-Cover Texts being LIST. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.2-invariants-or-later" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2 or any
+later version published by the Free Software Foundation; with the
+Invariant Sections being LIST THEIR TITLES, with the Front-Cover Texts
+being LIST, and with the Back-Cover Texts being LIST. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.2-no-invariants-only" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2; with
+no Invariant Sections, no Front-Cover Texts, and no Back- Cover Texts. A
+copy of the license is included in the section entitled "GNU Free
+Documentation License".
+{% elif "GFDL-1.2-no-invariants-or-later" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2 or any
+later version published by the Free Software Foundation; with no Invariant
+Sections, no Front-Cover Texts,and no Back-Cover Texts. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.2-only" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2; with
+the Invariant Sections being LIST THEIR TITLES, with the Front-Cover Texts
+being LIST, and with the Back-Cover Texts being LIST. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.2-or-later" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2 or any
+later version published by the Free Software Foundation; with the
+Invariant Sections being LIST THEIR TITLES, with the Front-Cover Texts
+being LIST, and with the Back-Cover Texts being LIST. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.2" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2 or any
+later version published by the Free Software Foundation; with no Invariant
+Sections, no Front-Cover Texts, and no Back- Cover Texts. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.3-invariants-only" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3; with
+with the Invariant Sections being LIST THEIR TITLES, with the Front-Cover
+Texts being LIST, and with the Back-Cover Texts being LIST. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.3-invariants-or-later" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or any
+later version published by the Free Software Foundation; with the
+Invariant Sections being LIST THEIR TITLES, with the Front-Cover Texts
+being LIST, and with the Back-Cover Texts being LIST. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.3-no-invariants-only" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3; with
+no Invariant Sections, no Front-Cover Texts, and no Back- Cover Texts. A
+copy of the license is included in the section entitled "GNU Free
+Documentation License".
+{% elif "GFDL-1.3-no-invariants-or-later" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or any
+later version published by the Free Software Foundation; with no Invariant
+Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.3-only" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3; with
+the Invariant Sections being LIST THEIR TITLES, with the Front-Cover Texts
+being LIST, and with the Back-Cover Texts being LIST. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.3-or-later" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or any
+later version published by the Free Software Foundation; with the
+Invariant Sections being LIST THEIR TITLES, with the Front-Cover Texts
+being LIST, and with the Back-Cover Texts being LIST. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GFDL-1.3" in spdx_expressions %}
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or any
+later version published by the Free Software Foundation; with no Invariant
+Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the
+license is included in the section entitled "GNU Free Documentation
+License".
+{% elif "GPL-1.0-only" in spdx_expressions %}
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; version 1.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+675 Mass Ave, Cambridge, MA 02139, USA.
+{% elif "GPL-1.0-or-later" in spdx_expressions %}
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 1, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+675 Mass Ave, Cambridge, MA 02139, USA.
+{% elif "GPL-1.0" in spdx_expressions %}
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; version 1.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+675 Mass Ave, Cambridge, MA 02139, USA.
+{% elif "GPL-1.0+" in spdx_expressions %}
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 1, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+675 Mass Ave, Cambridge, MA 02139, USA.
+{% elif "GPL-2.0-only" in spdx_expressions %}
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; version 2.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc., 51
+Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+{% elif "GPL-2.0-or-later" in spdx_expressions %}
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, 51
+Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+{% elif "GPL-2.0" in spdx_expressions %}
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; version 2.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc., 51
+Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+{% elif "GPL-2.0+" in spdx_expressions %}
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc., 51
+Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+{% elif "GPL-3.0-only" in spdx_expressions %}
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, version 3.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program. If not, see <https://www.gnu.org/licenses/>.
+{% elif "GPL-3.0-or-later" in spdx_expressions %}
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program. If not, see <https://www.gnu.org/licenses/>.
+{% elif "GPL-3.0" in spdx_expressions %}
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, version 3.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program. If not, see <https://www.gnu.org/licenses/>.
+{% elif "GPL-3.0+" in spdx_expressions %}
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program. If not, see <https://www.gnu.org/licenses/>.
+{% elif "Interbase-1.0" in spdx_expressions %}
+
+The contents of this file are subject to the Interbase Public License
+Version 1.0 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+http://www.Interbase.com/IPL.html
+
+Software distributed under the License is distributed on an "AS IS" basis,
+WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+for the specific language governing rights and limitations under the
+License.
+
+The Original Code was created by InterBase Software Corp and its
+successors.
+
+Portions created by Borland/Inprise are Copyright (C) Borland/Inprise. All
+Rights Reserved.
+
+Contributor(s): ______________________________________.
+{% elif "LGPL-2.0-only" in spdx_expressions %}
+
+This library is free software; you can redistribute it and/or modify it
+under the terms of the GNU Library General Public License as published by
+the Free Software Foundation; version 2.
+
+This library is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Library General Public
+License for more details.
+
+You should have received a copy of the GNU Library General Public License
+along with this library; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+{% elif "LGPL-2.0-or-later" in spdx_expressions %}
+
+This library is free software; you can redistribute it and/or modify it
+under the terms of the GNU Library General Public License as published by
+the Free Software Foundation; either version 2 of the License, or (at your
+option) any later version.
+
+This library is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Library General Public
+License for more details.
+
+You should have received a copy of the GNU Library General Public License
+along with this library; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+{% elif "LGPL-2.0" in spdx_expressions %}
+
+This library is free software; you can redistribute it and/or modify it
+under the terms of the GNU Library General Public License as published by
+the Free Software Foundation; version 2. This library is distributed in
+the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE. See the GNU Library General Public License for more details. You
+should have received a copy of the GNU Library General Public License
+along with this library; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+{% elif "LGPL-2.0+" in spdx_expressions %}
+
+This library is free software; you can redistribute it and/or modify it
+under the terms of the GNU Library General Public License as published by
+the Free Software Foundation; either version 2 of the License, or (at your
+option) any later version.
+
+This library is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Library General Public
+License for more details.
+
+You should have received a copy of the GNU Library General Public License
+along with this library; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+{% elif "LGPL-2.1-only" in spdx_expressions %}
+
+This library is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; version 2.1.
+
+This library is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public
+License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this library; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+{% elif "LGPL-2.1-or-later" in spdx_expressions %}
+
+This library is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; either version 2.1 of the License, or (at
+your option) any later version.
+
+This library is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public
+License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this library; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+{% elif "LGPL-2.1" in spdx_expressions %}
+
+This library is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; version 2.1.
+
+This library is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public
+License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this library; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+{% elif "LGPL-2.1+" in spdx_expressions %}
+
+This library is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; either version 2.1 of the License, or (at
+your option) any later version.
+
+This library is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public
+License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this library; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+{% elif "LPPL-1.0" in spdx_expressions %}
+
+This program can redistributed and/or modified under the terms of the
+LaTeX Project Public License Distributed from CTAN archives in directory
+macros/latex/base/lppl.txt; either version 1 of the License, or (at your
+option) any later version.
+{% elif "LPPL-1.1" in spdx_expressions %}
+
+This program may be distributed and/or modified under the conditions of
+the LaTeX Project Public License, either version 1.1 of this license or
+(at your option) any later version. The latest version of this license is
+in http://www.latex-project.org/lppl.txt and version 1.1 or later is part
+of all distributions of LaTeX version 1999/06/01 or later.
+
+This program consists of the files pig.dtx and pig.ins
+{% elif "LPPL-1.2" in spdx_expressions %}
+
+This program may be distributed and/or modified under the conditions of
+the LaTeX Project Public License, either version 1.2 of this license or
+(at your option) any later version. The latest version of this license is
+in http://www.latex-project.org/lppl.txt and version 1.2 or later is part
+of all distributions of LaTeX version 1999/12/01 or later.
+
+This program consists of the files pig.dtx and pig.ins
+{% elif "LPPL-1.3a" in spdx_expressions %}
+
+This work may be distributed and/or modified under the conditions of the
+LaTeX Project Public License, either version 1.3 of this license or (at
+your option) any later version. The latest version of this license is in
+http://www.latex-project.org/lppl.txt and version 1.3 or later is part of
+all distributions of LaTeX version 2003/12/01 or later.
+
+This work has the LPPL maintenance status "maintained".
+
+This Current Maintainer of this work is M. Y. Name.
+
+This work consists of the files pig.dtx and pig.ins and the derived file
+pig.sty.
+{% elif "LPPL-1.3c" in spdx_expressions %}
+
+This work may be distributed and/or modified under the conditions of the
+LaTeX Project Public License, either version 1.3 of this license or (at
+your option) any later version. The latest version of this license is in
+http://www.latex-project.org/lppl.txt and version 1.3 or later is part of
+all distributions of LaTeX version 2005/12/01 or later.
+
+This work has the LPPL maintenance status "maintained".
+
+The Current Maintainer of this work is M. Y. Name.
+
+This work consists of the files pig.dtx and pig.ins and the derived file
+pig.sty.
+{% elif "MPL-1.0" in spdx_expressions %}
+
+The contents of this file are subject to the Mozilla Public License
+Version 1.0 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+http://www.mozilla.org/MPL/
+
+Software distributed under the License is distributed on an "AS IS" basis,
+WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+for the specific language governing rights and limitations under the
+License.
+
+The Original Code is _____. The Initial Developer of the Original Code is
+_____. Portions created by _____ are Copyright (C) _____. All Rights
+Reserved. Contributor(s): _____.
+{% elif "MPL-1.1" in spdx_expressions %}
+
+The contents of this file are subject to the Mozilla Public License
+Version 1.1 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+http://www.mozilla.org/MPL/
+
+Software distributed under the License is distributed on an "AS IS" basis,
+WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+for the specific language governing rights and limitations under the
+License.
+
+The Original Code is ______________________________________.
+
+The Initial Developer of the Original Code is ________________________.
+Portions created by ______________________ are Copyright (C) ______. All
+Rights Reserved.
+
+Contributor(s): ______________________________________.
+
+Alternatively, the contents of this file may be used under the terms of
+the _____ license (the "[___] License"), in which case the provisions of
+[______] License are applicable instead of those above. If you wish to
+allow use of your version of this file only under the terms of the [____]
+License and not to allow others to use your version of this file under the
+MPL, indicate your decision by deleting the provisions above and replace
+them with the notice and other provisions required by the [___] License.
+If you do not delete the provisions above, a recipient may use your
+version of this file under either the MPL or the [___] License.
+{% elif "MPL-2.0-no-copyleft-exception" in spdx_expressions %}
+
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this file,
+You can obtain one at http://mozilla.org/MPL/2.0/.
+
+This Source Code Form is "Incompatible With Secondary Licenses", as
+defined by the Mozilla Public License, v. 2.0.
+{% elif "MPL-2.0" in spdx_expressions %}
+
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this file,
+You can obtain one at http://mozilla.org/MPL/2.0/.
+{% elif "MulanPSL-1.0" in spdx_expressions %}
+
+[Software Name] is licensed under the Mulan PSL v1.
+
+You can use this software according to the terms and conditions of the
+Mulan PSL v1.
+
+You may obtain a copy of Mulan PSL v1 at:
+
+http://license.coscl.org.cn/MulanPSL
+
+THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+NON-INFRINGEMENT, MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+
+See the Mulan PSL v1 for more details.
+{% elif "MulanPSL-2.0" in spdx_expressions %}
+
+[Software Name] is licensed under Mulan PSL v2.
+
+You can use this software according to the terms and conditions of the
+Mulan PSL v2.
+
+You may obtain a copy of Mulan PSL v2 at:
+
+http://license.coscl.org.cn/MulanPSL2
+
+THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY
+KIND,
+
+EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+
+MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+
+See the Mulan PSL v2 for more details.
+{% elif "OCLC-2.0" in spdx_expressions %}
+
+Copyright (c) 2000- (insert then current year) OCLC Online Computer
+Library Center, Inc. and other contributors. All rights reserved. The
+contents of this file, as updated from time to time by the OCLC Office of
+Research, are subject to OCLC Research Public License Version 2.0 (the
+"License"); you may not use this file except in compliance with the
+License. You may obtain a current copy of the License at
+http://purl.oclc.org/oclc/research/ORPL/. Software distributed under the
+License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND,
+either express or implied. See the License for the specific language
+governing rights and limitations under the License. This software consists
+of voluntary contributions made by many individuals on behalf of OCLC
+Research. For more information on OCLC Research, please see
+http://www.oclc.org/research/. The Original Code is
+______________________________. The Initial Developer
+of the Original Code is ________________________. Portions created by
+______________________ are ____________________________. All Rights
+Reserved. Contributor(s): ______________________________________.
+{% elif "OSL-1.0" in spdx_expressions %}
+
+Licensed under the Open Software License version 1.0
+{% elif "OSL-1.1" in spdx_expressions %}
+
+Licensed under the Open Software License version 1.1
+{% elif "OSL-2.0" in spdx_expressions %}
+
+Licensed under the Open Software License version 2.0
+{% elif "OSL-2.1" in spdx_expressions %}
+
+Licensed under the Open Software License version 2.1
+{% elif "OSL-3.0" in spdx_expressions %}
+
+Licensed under the Open Software License version 3.0
+{% elif "Pixar" in spdx_expressions %}
+
+Licensed under the Apache License, Version 2.0 (the "Apache License") with
+the following modification; you may not use this file except in compliance
+with the Apache License and the following modification to it: Section 6.
+Trademarks. is deleted and replaced with:
+
+6\. Trademarks. This License does not grant permission to use the trade
+names, trademarks, service marks, or product names of the Licensor and its
+affiliates, except as required to comply with Section 4(c) of the License
+and to reproduce the content of the NOTICE file.
+
+You may obtain a copy of the Apache License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the Apache License with the above modification is
+distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied. See the Apache License for the specific
+language governing permissions and limitations under the Apache License.
+{% elif "RPSL-1.0" in spdx_expressions %}
+
+Copyright (c) 1995-2002 RealNetworks, Inc. and/or its licensors. All
+Rights Reserved.
+
+The contents of this file, and the files included with this file, are
+subject to the current version of the RealNetworks Public Source License
+Version 1.0 (the "RPSL") available at
+https://www.helixcommunity.org/content/rpsl unless you have licensed the
+file under the RealNetworks Community Source License Version 1.0 (the
+"RCSL") available at https://www.helixcommunity.org/content/rcsl, in which
+case the RCSL will apply. You may also obtain the license terms directly
+from RealNetworks. You may not use this file except in compliance with the
+RPSL or, if you have a valid RCSL with RealNetworks applicable to this
+file, the RCSL. Please see the applicable RPSL or RCSL for the rights,
+obligations and limitations governing use of the contents of the file.
+
+This file is part of the Helix DNA Technology. RealNetworks is the
+developer of the Original code and owns the copyrights in the portions it
+created.
+
+This file, and the files included with this file, is distributed and made
+available on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+EXPRESS OR IMPLIED, AND REALNETWORKS HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
+
+Contributor(s): ____________________________________
+
+Technology Compatibility Kit Test Suite(s) Location (if licensed under the
+RCSL): _____
+{% elif "SCEA" in spdx_expressions %}
+
+2005 Sony Computer Entertainment Inc.
+
+Licensed under the SCEA Shared Source License, Version 1.0 (the
+"License"); you may not use this file except in compliance with the
+License. You may obtain a copy of the License at:
+http://research.scea.com/scea_shared_source_license.html
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations
+under the License.
+{% elif "SGI-B-1.0" in spdx_expressions %}
+
+License Applicability. Except to the extent portions of this file are made
+subject to an alternative license as permitted in the SGI Free Software
+License B, Version 1.0 (the "License"), the contents of this file are
+subject only to the provisions of the License. You may not use this file
+except in compliance with the License. You may obtain a copy of the
+License at Silicon Graphics, Inc., attn: Legal Services, 1600 Ampitheatre
+Parkway, Mountain View, CA 94043-1351, or at:
+
+http://oss.sgi.com/projects/FreeB
+
+Note that, as provided in the License, the Software is distributed on an
+"AS IS" basis, with ALL EXPRESS AND IMPLIED WARRANTIES AND CONDITIONS
+DISCLAIMED, INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES AND
+CONDITIONS OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A
+PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+Original Code. The Original Code is: [ name of software, version number,
+and release date ], developed by Silicon Graphics, Inc. The Original Code
+is [ dates of first publication, as appearing in the Notice in the
+Original Code ] Silicon Graphics, Inc. Copyright in any portions created
+by third parties is as indicated elsewhere herein. All Rights Reserved.
+
+Additional Notice Provisions: [ such additional provisions, if any, as
+appear in the Notice in the Original Code under the heading "Additional
+Notice Provisions" ]
+{% elif "SGI-B-1.1" in spdx_expressions %}
+
+License Applicability. Except to the extent portions of this file are made
+subject to an alternative license as permitted in the SGI Free Software
+License B, Version 1.1 (the "License"), the contents of this file are
+subject only to the provisions of the License. You may not use this file
+except in compliance with the License. You may obtain a copy of the
+License at Silicon Graphics, Inc., attn: Legal Services, 1600 Amphitheatre
+Parkway, Mountain View, CA 94043-1351, or at:
+
+http://oss.sgi.com/projects/FreeB
+
+Note that, as provided in the License, the Software is distributed on an
+"AS IS" basis, with ALL EXPRESS AND IMPLIED WARRANTIES AND CONDITIONS
+DISCLAIMED, INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES AND
+CONDITIONS OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A
+PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+Original Code. The Original Code is: [ name of software, version number,
+and release date ], developed by Silicon Graphics, Inc. The Original Code
+is [ dates of first publication, as appearing in the Notice in the
+Original Code ] Silicon Graphics, Inc. Copyright in any portions created
+by third parties is as indicated elsewhere herein. All Rights Reserved.
+
+Additional Notice Provisions: [ such additional provisions, if any, as
+appear in the Notice in the Original Code under the heading "Additional
+Notice Provisions" ]
+{% elif "SHL-0.51" in spdx_expressions %}
+
+Copyright and related rights are licensed under the Solderpad Hardware
+License, Version 0.51 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+http://solderpad.org/licenses/SHL-0.51. Unless required by applicable law
+or agreed to in writing, software, hardware and materials distributed
+under this License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
+OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+the specific language governing permissions and limitations under the
+License.
+{% elif "SHL-0.5" in spdx_expressions %}
+
+Copyright and related rights are licensed under the Solderpad Hardware
+License, Version 0.5 (the "License"); you may not use this file except in
+compliance with the License. You may obtain a copy of the License at
+http://solderpad.org/licenses/SHL-0.5. Unless required by applicable law
+or agreed to in writing, software, hardware and materials distributed
+under this License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
+OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+the specific language governing permissions and limitations under the
+License.
+{% elif "SISSL-1.2" in spdx_expressions %}
+
+The contents of this file are subject to the Sun Industry Standards Source
+License Version 1.2 (the License); You may not use this file except in
+compliance with the License."
+
+"You may obtain a copy of the License at
+gridengine.sunsource.net/license.html"
+
+"Software distributed under the License is distributed on an AS IS basis,
+WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+for the specific language governing rights and limitations under the
+License."
+
+The Original Code is Grid Engine.
+
+"The Initial Developer of the Original Code is: Sun Microsystems, Inc."
+
+"Portions created by: Sun Microsystems, Inc. are Copyright (C) 2001 Sun
+Microsystems, Inc."
+
+All Rights Reserved.
+
+Contributor(s): __________________________________
+{% elif "SISSL" in spdx_expressions %}
+
+The contents of this file are subject to the Sun Standards License Version
+1.1 (the "License"); You may not use this file except in compliance with
+the License. You may obtain a copy of the License at
+_______________________________.
+
+Software distributed under the License is distributed on an "AS IS" basis,
+WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+for the specific language governing rights and limitations under the
+License.
+
+The Original Code is ______________________________________.
+
+The Initial Developer of the Original Code is: Sun Microsystems, Inc..
+
+Portions created by: _______________________________________
+
+are Copyright (C): _______________________________________
+
+All Rights Reserved.
+
+Contributor(s): _______________________________________
+{% elif "SPL-1.0" in spdx_expressions %}
+
+The contents of this file are subject to the Sun Public License Version
+1.0 (the License); you may not use this file except in compliance with the
+License. A copy of the License is available at http://www.sun.com/
+
+The Original Code is _________________. The Initial Developer of the
+Original Code is ___________. Portions created by ______ are Copyright
+(C)_________. All Rights Reserved.
+
+Contributor(s): ______________________________________.
+
+Alternatively, the contents of this file may be used under the terms of
+the _____ license (the ?[___] License?), in which case the provisions of
+[______] License are applicable instead of those above. If you wish to
+allow use of your version of this file only under the terms of the [____]
+License and not to allow others to use your version of this file under the
+SPL, indicate your decision by deleting the provisions above and replace
+them with the notice and other provisions required by the [___] License.
+If you do not delete the provisions above, a recipient may use your
+version of this file under either the SPL or the [___] License.
+{% elif "SSPL-1.0" in spdx_expressions %}
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the Server Side Public License, version 1, as published
+by MongoDB, Inc. This program is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the Server Side
+Public License for more details. You should have received a copy of the
+Server Side Public License along with this program. If not, see
+<http://www.mongodb.com/licensing/server-side-public-license>.
+{% elif "TGPPL-1.0" in spdx_expressions %}
+
+*Licensed under the Transitive Grace Period Public Licence version 1.0*
+{% elif "TPL-1.0" in spdx_expressions %}
+
+The contents of this file are subject to the THOR Public License Version
+1.0 (the "License"); you may not use this file except in compliance with
+the License.
+
+Software distributed under the License is distributed on an "AS IS" basis,
+WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+for the specificlanguage governing rights and limitations under the
+License.
+
+The Original Code is ______________________________________.
+
+The Initial Developer of the Original Code is _____________.
+
+Portions created by ______________________ are Copyright (C) ______
+_______________________.
+
+All Rights Reserved.
+
+Contributor(s): ______________________________________.
+
+Alternatively, the contents of this file may be used under the terms of
+the _____ license (the [___] License), in which case the provisions of
+[______] License are applicable instead of those above. If you wish to
+allow use of your version of this file only under the terms of the [____]
+License and not to allow others to use your version of this file under the
+TPL, indicate your decision by deleting the provisions above and replace
+them with the notice and other provisions required by the [___] License.
+If you do not delete the provisions above, a recipient may use your
+version of this file under either the TPL or the [___] License.
+{% elif "UCL-1.0" in spdx_expressions %}
+
+Licensed under the Upstream Compatibility License 1.0
+{% elif "W3C-20150513" in spdx_expressions %}
+
+World Wide Web Consortium, (Massachusetts Institute of Technology,
+European Research Consortium for Informatics and Mathematics, Keio
+University, Beihang). All Rights Reserved. This work is distributed under
+the W3C® Software License [1] in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. [1]
+http://www.w3.org/Consortium/Legal/copyright-software
+{% elif "W3C" in spdx_expressions %}
+
+World Wide Web Consortium, (Massachusetts Institute of Technology,
+European Research Consortium for Informatics and Mathematics, Keio
+University). All Rights Reserved.
+
+This work is distributed under the W3C® Software License in the hope that
+it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+{% endif %}
