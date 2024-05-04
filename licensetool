@@ -80,7 +80,7 @@ function guess_author {
   mapfile -t AUTHORS < \
     <(git -C "${BASE}" shortlog -sn "${FILE}" |
       cut -f2 |
-      fzf --layout=reverse --multi --header-first --select-1)
+      fzf --layout=reverse --multi --header-first --select-1 --exit-0)
 }
 
 function guess_email {
