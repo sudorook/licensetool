@@ -33,6 +33,7 @@ function run_annotate {
     ${MULTILINE:+--multi-line} \
     ${LICENSES[*]/#/ --license=} \
     --merge-copyrights \
+    --fallback-dot-license \
     ${COPYRIGHT_STYLE:+--copyright-style="${COPYRIGHT_STYLE}"} \
     --template=header \
     "${IN}"
@@ -54,6 +55,7 @@ function run_annotate {
       --copyright="${AUTHORS["${idx}"]}${EMAILS["${idx}"]:+ <${EMAILS["${idx}"]}>}" \
       ${year:+--year "${year}" }${year_end:+--year "${year_end}" } \
       --merge-copyrights \
+      --fallback-dot-license \
       ${COPYRIGHT_STYLE:+--copyright-style="${COPYRIGHT_STYLE}"} \
       --template=header \
       "${IN}"
