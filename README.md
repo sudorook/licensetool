@@ -23,12 +23,12 @@ Tool for adding license information to a repository. Useful for inserting
 SPDX-compliant license headers to files, including any relevant license-specific
 header text, via [reuse-tool](https://github.com/fsfe/reuse-tool).
 
-The attracting of using this script instead of using `reuse annotate` directly
-is the ability to fill fields directly from Git metadata.
+The main attraction of this script over using `reuse annotate` directly is the
+ability to fill fields directly from Git metadata.
 
 Also included are custom license templates (see
 `.reuse/templates/header.jinja2`) that not only set the SPDX standard fields but
-also the copyright blurbs for each license that includes them.
+also adds the copyright blurbs for licenses that include them.
 
 For example, setting a GPLv3 header will embed:
 
@@ -50,6 +50,16 @@ for more details.
 You should have received a copy of the GNU General Public License along
 with this program. If not, see <https://www.gnu.org/licenses/>.
 ```
+
+**IMPORTANT:** As of writing, `reuse-tool` requires that header templates exist
+at the root of the project directory. The presence
+`.reuse/templates/header.jinja2` is a requirement for this script to work so
+either:
+
+1. Copy `.reuse/` from this repository to the base of each project.
+2. Use [my fork](https://github.com/sudorook/reuse-tool) of reuse which uses
+   `python-appdirs` to read templates from a global location. (On Linux, copy
+   `.reuse/` to `~/.local/share/reuse`.)
 
 ## Embed SPDX metadata
 
