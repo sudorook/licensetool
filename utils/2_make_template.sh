@@ -28,6 +28,7 @@ function write_jinja_template {
   local idx
 
   show_header "Writing ${OUTFILE@Q}." >&2
+  mkdir -p "$(dirname "${OUTFILE}")"
   cat > "${OUTFILE}" << EOF
 {% for copyright_line in copyright_lines %}
 {{ copyright_line }}
