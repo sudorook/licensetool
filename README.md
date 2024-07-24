@@ -95,10 +95,14 @@ Lastly, the `-s` flag refers to the copyright style. The options are:
 
 - `spdx`
 - `spdx-c`
+- `spdx-string-c`
+- `spdx-string`
+- `spdx-string-symbol`
 - `spdx-symbol`
 - `string`
 - `string-c`
 - `string-symbol`
+- `symbol`
 
 See `reuse annotate --help` for more information.
 
