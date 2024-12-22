@@ -62,10 +62,6 @@ function run_annotate {
   done
 }
 
-function run_init {
-  reuse init
-}
-
 function run_download {
   reuse download --all
 }
@@ -152,7 +148,7 @@ function select_license {
 }
 
 function print_usage {
-  show_header "Usage: ./licensetool <annotate|download|init> <flags> <file>"
+  show_header "Usage: ./licensetool <annotate|download> <flags> <file>"
   show_listitem "\
   -a|--author   <string>  author (optional)
   -e|--email    <string>  email address (optional)
@@ -269,9 +265,6 @@ case "${MODE}" in
     fi
 
     run_annotate
-    ;;
-  init | install)
-    run_init
     ;;
   download)
     run_download
